@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Photos/ApecIcon.png" />
+
+    <title>@ViewBag.Title </title>
+    <meta name="viewport" content="width=divice-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <style>
+        
+        
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px;
+                border-radius: 0 6px 6px 6px;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-submenu > a:after {
+                display: block;
+                content: " ";
+                float: right;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                border-left-color: #ccc;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+
+            .dropdown-submenu:hover > a:after {
+                border-left-color: #fff;
+            }
+
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+
+                .dropdown-submenu.pull-left > .dropdown-menu {
+                    left: -100%;
+                    margin-left: 10px;
+                    -webkit-border-radius: 6px 0 6px 6px;
+                    -moz-border-radius: 6px 0 6px 6px;
+                    border-radius: 6px 0 6px 6px;
+                }
+    </style>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("APEC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="dropdown-submenu" style="color:black">
+                        <a href="#" class="dropdown-item" style="background-color:black">Products</a>
+
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-item"><a href="/Home/Aerospace_Parts">Aerospace Parts</a></li>
+                            <li class="dropdown-item"><a href="/Home/Oil_n_Gas">Oil & Gas</a></li>
+                            <li class="dropdown-item"><a href="/Home/Machine_Tools">Machine Tools</a></li>
+                            <li class="dropdown-item"><a href="/Home/Semiconductor">Semiconductor</a></li>
+                            <li class="dropdown-item"><a href="/Home/Locomotive">Locomotive</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" tabindex="-1" href="#">Medical Components</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a tabindex="-1" href="/Home/Opthamology_Equipment_Parts">Opthamology Equipment Parts</a></li>
+
+                                    <li class="dropdown-item"><a href="/Home/Respiratory_Equipment_Parts">Respiratory Equipment Parts</a></li>
+                                    <li class="dropdown-item"><a href="/Home/Imaging_Machine_Parts">Imaging Machine Parts</a></li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+
+            </div>           
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ADVANCED PRECISION ENGINEERING COMPANY </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

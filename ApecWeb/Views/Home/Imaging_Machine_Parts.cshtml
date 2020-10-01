@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Medical Components";
+}
+
+<h2 class="text-center">Imaging Machine Parts</h2>
+<hr />
+
+<fieldset>
+    <div class="container center-block">
+        <div class="row">
+            <div class="col-md-1">
+                <p>.</p>
+            </div>
+            <div class="col-md-6 col-md-offset-2">
+                <div id="imageCarousel" class="carousel slide" data-interval="2000"
+                     data-ride="carousel" data-pause="hover" data-wrap="true">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                        
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img width="900" height="300" src="~/Photos/Imaging_Machine_Parts/img1.jpg" class="img-responsive">
+                            @*<div class="carousel-caption">
+                                    <h3></h3>
+                                    <p style="font-weight: bold; color:cornflowerblue;font-size:small">Mahesh Chand's S/W Developer Community</p>
+                                </div>*@
+                        </div>
+                    </div>
+
+                    <a href="#imageCarousel" class="carousel-control left" data-slide="prev">
+                        <span class="glyphicon glyphicon-hand-left"></span>
+                    </a>
+                    <a href="#imageCarousel" class="carousel-control right" data-slide="next">
+                        <span class="glyphicon glyphicon-hand-right"></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</fieldset>
+
